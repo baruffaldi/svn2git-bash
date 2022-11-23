@@ -1,5 +1,7 @@
 # svn2git-bash
 
+## SVN to GIT repository migrator
+
 This script has been made belong my needings.
 
 I just needed one simple bash script, easy to customize, to migrate a lot of SVN repos to new GIT repos.
@@ -15,13 +17,24 @@ Optionally you can specify:
 - User name
 - User email
 
-Some usage examples:
+## Some usage examples
 
-- Without user and email:
+
+#### Without user and email:
+```
 ./svn2git.sh /media/users.txt "file:///media/svn/projects/sound-kiosk/" "https://gitlab.example.com/internal/mobile-applications/sound-kiosk.git"
+```
 
-- With user
+
+
+#### With user
+```
 ./svn2git.sh /media/users.txt "file:///media/svn/projects/sound-kiosk/" "https://gitlab.example.com/internal/mobile-applications/sound-kiosk.git" "Filippo Baruffaldi"
+```
 
-- With user and email
+
+
+#### With user and email
+```
 ./svn2git.sh /media/users.txt "file:///media/svn/projects/sound-kiosk/" "https://gitlab.example.com/internal/mobile-applications/sound-kiosk.git" "Filippo Baruffaldi" "filippo.baruffaldi@example.com"
+```
