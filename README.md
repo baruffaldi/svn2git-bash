@@ -17,6 +17,11 @@ Optionally you can specify:
 - User name
 - User email
 
+## Dependencies
+- git
+- subversion
+- git-svn
+
 ## Some usage examples
 
 
