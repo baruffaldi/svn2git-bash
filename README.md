@@ -8,7 +8,7 @@ I just needed one simple bash script, easy to customize, to migrate a lot of SVN
 
 It just need:
 
-- users mapping file ( create it with this command: svn log -q | awk -F '|' '/^r/ {gsub(/ /, "", $2); sub(" $", "", $2); print $2" = "$2" <"$2">"}' | sort -u > users.txt )
+- users mapping file
 - SVN source repository
 - GIT destination repository
 
@@ -24,6 +24,10 @@ Optionally you can specify:
 
 ## Some usage examples
 
+#### Users mapping file creation
+```
+svn log -q | awk -F '|' '/^r/ {gsub(/ /, "", $2); sub(" $", "", $2); print $2" = "$2" <"$2">"}' | sort -u > users.txt
+```
 
 #### Without user and email:
 ```
