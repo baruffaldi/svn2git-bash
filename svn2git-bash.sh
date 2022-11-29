@@ -51,7 +51,7 @@ git commit -m 'Conversione da svn:ignore a .gitignore.'
 # Clone the branch
 BRANCHES=`git branch -r | grep -v "  origin/trunk"`
 while read -r branch; do
-	[ ! -z "$branch" ] && git checkout -b $branch $branch
+	[ ! -z "$branch" ] && git checkout -f -b $branch $branch
 	[ ! -z "$branch" ] && git svn fetch && git svn fetch && git svn fetch && git svn fetch && git svn fetch && git svn fetch && git svn fetch
 	[ ! -z "$branch" ] && git fetch && git fetch && git fetch && git fetch && git fetch && git fetch && git fetch
 done <<< $BRANCHES
@@ -69,7 +69,7 @@ git clone tmp $SVN_REPO_NAME
 cd $SVN_REPO_NAME
 
 while read -r branch; do
-	[ ! -z "$branch" ] && git checkout -b ${branch##*/} origin/$branch
+	[ ! -z "$branch" ] && git checkout -f -b ${branch##*/} origin/$branch
 	[ ! -z "$branch" ] && git fetch && git fetch && git fetch && git fetch && git fetch && git fetch && git fetch
 done <<< $BRANCHES
 git switch master
